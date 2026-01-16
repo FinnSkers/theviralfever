@@ -1,14 +1,9 @@
 'use client';
 
-import { Product } from '@/lib/types';
+import { Product, CartItem } from '@/lib/types';
 import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
-
-interface CartItem {
-  product: Product;
-  quantity: number;
-}
 
 interface ShoppingCartProps {
   isOpen: boolean;

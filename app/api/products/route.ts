@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     }
     
     const product: Product = {
-      id: `prod-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      id: `prod-${Date.now()}-${crypto.randomUUID().substring(0, 8)}`,
       name,
       description: description || '',
       price: parseFloat(price),

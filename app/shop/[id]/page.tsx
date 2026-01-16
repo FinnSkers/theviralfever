@@ -2,15 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Shop, Product } from '@/lib/types';
+import { Shop, Product, CartItem } from '@/lib/types';
 import ProductCard from '@/components/ProductCard';
 import ShoppingCart from '@/components/ShoppingCart';
 import { ShoppingCart as CartIcon, Edit, Plus, Trash2, Save, X } from 'lucide-react';
-
-interface CartItem {
-  product: Product;
-  quantity: number;
-}
 
 export default function ShopPage() {
   const params = useParams();

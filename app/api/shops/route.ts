@@ -17,10 +17,10 @@ export async function POST(request: NextRequest) {
     // Generate shop configuration from prompt
     const shopConfig = generateShopFromPrompt(prompt);
     
-    // Create shop with unique ID
+    // Create shop with unique ID using crypto
     const shop = storage.createShop({
       ...shopConfig,
-      id: `shop-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      id: `shop-${Date.now()}-${crypto.randomUUID().substring(0, 8)}`,
       createdAt: new Date().toISOString(),
     });
     
